@@ -22,6 +22,13 @@ tar xf phantomjs-2.1.1-linux-x86_64.tar.bz2 && rm -f phantomjs-2.1.1-linux-x86_6
 mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs . && rm -rf phantomjs-2.1.1-linux-x86_64
 ```
 
+## For Docker
+
+```
+docker build -t local/paperconv .
+docker run -itd -v output.md:output.md --name paperconv local/paperconv
+```
+
 # Execute
 
 ```
