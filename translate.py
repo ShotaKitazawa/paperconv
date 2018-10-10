@@ -16,11 +16,11 @@ def translate(en):
     url = urllib.parse.quote_plus(url_text, "/:?=&#")
 
     driver.get(url)
+    time.sleep(3)
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
-    time.sleep(1.5)
 
-    return soup.find(id='result_box').text.rsplit("...")
+    return soup.find(id='result_box').text.rstrip("...")
 
 
 if __name__ == "__main__":

@@ -26,12 +26,16 @@ mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs . && rm -rf phantomjs-2.1.1-linux-
 
 ```
 docker build -t local/paperconv .
-docker run -itd -v output.md:output.md --name paperconv local/paperconv
 ```
 
 # Execute
 
 ```
-python3 translate.py hoge.txt | tee hoge.md
+python3 translate.py input.txt | tee output.md
 ```
 
+## Execute For Docker
+
+```
+docker run -itd -v input.txt:/usr/src/app/ --name paperconv local/paperconv | tee output.md
+```

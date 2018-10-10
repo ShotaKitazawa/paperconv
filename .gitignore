@@ -1,3 +1,4 @@
 phantomjs
 ghostdriver.log
-tmp.*
+input.txt
+output.md
