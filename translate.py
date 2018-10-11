@@ -11,6 +11,7 @@ driver = webdriver.PhantomJS(executable_path='./phantomjs')
 
 
 def translate(en):
+    en = en.replace('/', '%2F')
 
     url_text = "https://translate.google.co.jp/#en/ja/{0}".format(en)
     url = urllib.parse.quote_plus(url_text, "/:?=&#")
